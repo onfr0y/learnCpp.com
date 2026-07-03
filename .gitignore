@@ -1,0 +1,27 @@
+# CMake and Compilation outputs
+build/
+bin/
+day_*/bin_run
+day_*/*_bin
+*.o
+*.obj
+*.out
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE configuration
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local build artifacts
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
