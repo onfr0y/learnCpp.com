@@ -1,6 +1,6 @@
-# 📚 LearnCpp.com Daily Study Project
+# 📚 LearnCpp.com Study Project
 
-> **C++ Study Repository & Daily Curriculum**
+> **C++ Study Repository & Curriculum organized by Chapters/Units**
 > Designed for **Khaotang (Onfroy)** | Incoming Electrical Engineering Student at SIIT
 > Focus: Transitioning from C/JS/TS to Modern C++ (C++20) with EE applications.
 
@@ -8,7 +8,7 @@
 
 ## 🛠️ Project Structure & Building
 
-This repository is structured as a single CMake project with daily units as subdirectories. Each daily subfolder has its own isolated target, allowing you to build and run them separately or all at once.
+This repository is structured as a single CMake project with unit subdirectories. Each subfolder has its own isolated target, allowing you to build and run them separately.
 
 ### Prerequisites
 - **CMake** (v3.15 or newer)
@@ -27,41 +27,51 @@ cmake ..
 # Build all targets
 cmake --build .
 
-# Run a specific day's executable (e.g., Day 01)
-./day_01/day_01_bin
+# Run a specific unit's executable (e.g., Unit 01)
+./unit_01/unit_01_bin
+```
+
+Alternatively, you can compile and execute a specific unit immediately using the root runner script:
+```bash
+./run.sh unit_01
 ```
 
 ---
 
-## 📅 The 30-Day Modern C++ Curriculum
+## 📅 The Modern C++ Curriculum (Unit-by-Unit)
 
 Since you already have a strong foundation in **C** and **JavaScript/TypeScript**, this curriculum focuses on the distinct features of modern C++, RAII (Resource Acquisition Is Initialization), memory safety, object-oriented design, templates, standard containers, and EE-relevant simulations.
 
-| Day | Topic | LearnCpp.com Chapters | Focus / Key Concepts | Daily Code Project |
+| Unit | Topic | LearnCpp.com Chapters | Focus / Key Concepts | Code Project |
 | :--- | :--- | :--- | :--- | :--- |
-| **01** | [Setup & C++ Basics](./day_01) | Chapters 1 & 2 | Standard streams (`std::cout`, `std::cin`), namespaces, functions, header files, preprocessor directives. | Basic I/O, user interaction, namespaces. |
-| **02** | [Debugging & Fundamental Types](./day_02) | Chapters 3 & 4 | Debugging strategies, integer widths, `std::size_t`, floating-point issues, type casting (`static_cast`). | Precision analyzer, safe casting tools. |
-| **03** | [Constants, Strings & Operators](./day_03) | Chapters 5 & 6 | `const`, `constexpr`, `consteval`, `std::string`, `std::string_view` (and why it matters), operator precedence. | Constant string utility, compile-time computations. |
-| **04** | [Scope, Duration & Linkage](./day_04) | Chapter 7 | Local & global variables, static duration, internal/external linkage, namespaces, inline variables. | Global configuration system simulator. |
-| **05** | [Control Flow & Error Handling](./day_05) | Chapters 8 & 9 | `switch` statements, loops, defensive programming, `assert`, `static_assert`. | Command-line menu parser & static verification. |
-| **06** | [Type Conversion & Templates](./day_06) | Chapters 10 & 11 | Implicit/explicit conversions, function overloading, function templates, auto type deduction. | Generic math helpers, unit conversion template. |
-| **07** | [References & Pointers](./day_07) | Chapter 12 | Lvalue references, const references (pass by const ref), raw pointers, const pointers, references vs pointers. | Address inspector & reference speed benchmark. |
-| **08** | [Enums & Structs](./day_08) | Chapter 13 | Scoped enums (`enum class`), structs, member selection, default initialization, padding/size. | **EE Special:** Resistor band calculator. |
-| **09** | [Introduction to Classes](./day_09) | Chapter 14 | Public vs private access, member functions, constructors, member initializer lists, const class objects/methods. | **EE Special:** AC Circuit Element (Impedance calculator). |
-| **10** | [More on Classes](./day_10) | Chapter 15 | Friend functions/classes, nested types, static member variables/functions, class templates. | System parameters manager. |
-| **11** | [Dynamic Arrays: std::vector](./day_11) | Chapter 16 | `std::vector` basics, sizing, capacity, loops (range-based for), stack behavior. | Dynamic trace log buffer. |
-| **12** | [Fixed Arrays, Iterators & Algorithms](./day_12) | Chapters 17 & 18 | `std::array`, C-style arrays, multidimensional arrays, iterators, standard algorithms (`std::sort`, `std::find`). | **EE Special:** Signal sampler & basic filtering. |
-| **13** | [Memory: Dynamic Allocation](./day_13) | Chapter 19 | `new` and `delete`, dynamically allocating arrays (why to avoid them in modern C++). | Dynamic memory leak simulation & checker. |
-| **14** | [Functions Deep Dive](./day_14) | Chapter 20 | Function pointers, `std::function`, lambda expressions, recursion. | **EE Special:** Function generator / Signal mapper. |
-| **15** | [Object Relations](./day_15) | Chapter 21 | Composition, aggregation, association, container classes. | Network node routing simulation. |
-| **16** | [Inheritance](./day_16) | Chapter 22 | Derived classes, construction order, calling parent constructors, access specifiers. | Device hierarchy (Sensor -> AnalogSensor). |
-| **17** | [Virtual Functions & Polymorphism](./day_17) | Chapter 23 | Virtual functions, override/final, virtual destructors, abstract classes, interfaces. | **EE Special:** Oscilloscope input simulator. |
-| **18** | [Templates & Specialization](./day_18) | Chapter 24 | Class templates, template specialization, expression parameters. | Matrix type class for linear algebra. |
-| **19** | [Exceptions](./day_19) | Chapter 25 | Try/catch/throw, exception hierarchy, custom exceptions, `noexcept`. | Safe parser for engineering data formats. |
-| **20** | [Move Semantics & Smart Pointers](./day_20) | Chapter 26 | `std::unique_ptr`, `std::shared_ptr`, `std::weak_ptr`, move constructors, `std::move`. | Hardware driver resource manager (RAII). |
-| **21** | [Input/Output (I/O) & Files](./day_21) | Chapter 27 | File streams (`std::ifstream`, `std::ofstream`), string streams, I/O manipulators. | Configuration file reader/writer. |
-| **22** | [STL Containers & Algorithms](./day_22) | Chapter 28 | Sequential vs associative containers (`std::map`, `std::unordered_map`, `std::set`), STL algorithms. | Components inventory DB. |
-| **23-30** | [Capstone Engineering Projects](./capstones) | Custom | Focus on EE applications (DSP filters, circuit simulators, logic gate simulation, state machines). | High-fidelity simulations. |
+| **01** | [C++ Basics](./unit_01) | Chapter 1 | Standard streams (`std::cout`, `std::cin`), variable initialization, standard output formatting. | Basic I/O, user interaction. |
+| **02** | [Functions and Files](./unit_02) | Chapter 2 | Function syntax, parameters, return values, forward declarations, header files/guards. | Function call structure & prototypes. |
+| **03** | [Debugging](./unit_03) | Chapter 3 | Debugging strategies, compilation warning flags, debugger controls, call stack inspection. | Step-by-step debugger setup. |
+| **04** | [Fundamental Data Types](./unit_04) | Chapter 4 | Integer widths (`<cstdint>`), `std::size_t`, floating-point rounding errors, `static_cast` type casting. | Float precision analyzer & casting tools. |
+| **05** | [Constants and Strings](./unit_05) | Chapter 5 | `const`, `constexpr`, `consteval`, `std::string`, `std::string_view` (lifetime & efficiency). | Compile-time computation & string view demo. |
+| **06** | [Operators](./unit_06) | Chapter 6 | Operator precedence, associativity, arithmetic and relational operations. | Operator evaluation demonstration. |
+| **07** | Scope, Duration & Linkage | Chapter 7 | Local & global variables, static duration, internal/external linkage, namespaces, inline variables. | Global configuration system simulator. |
+| **08** | Control Flow | Chapter 8 | `switch` statements, loops, break/continue. | Command-line menu parser. |
+| **09** | Error Handling & Asserts | Chapter 9 | Defensive programming, `assert`, `static_assert`. | Static verification helpers. |
+| **10** | Type Conversion & Overloading | Chapter 10 | Implicit/explicit conversions, function overloading, auto type deduction. | Type conversion simulator. |
+| **11** | Function Templates | Chapter 11 | Writing and using templates, type deduction. | Generic math helpers template. |
+| **12** | References & Pointers | Chapter 12 | Lvalue references, const references, raw pointers, const pointers, pointers vs references. | Address inspector & speed benchmark. |
+| **13** | Enums & Structs | Chapter 13 | Scoped enums (`enum class`), structs, padding, initialization. | **EE Special:** Resistor band calculator. |
+| **14** | Introduction to Classes | Chapter 14 | Public vs private, constructors, member initializer lists, const objects. | **EE Special:** AC Circuit Impedance calculator. |
+| **15** | More on Classes | Chapter 15 | Friend functions, static members, nested types, class templates. | System parameters manager. |
+| **16** | Dynamic Arrays: std::vector | Chapter 16 | Vector basics, capacity/sizing, range-based for loops. | Dynamic trace log buffer. |
+| **17** | Fixed Arrays, Iterators & Algorithms | Chapters 17 & 18 | `std::array`, C-style arrays, iterators, standard algorithms (`std::sort`, `std::find`). | **EE Special:** Signal sampler & basic filtering. |
+| **18** | Memory: Dynamic Allocation | Chapter 19 | `new` and `delete`, dynamic memory safety. | Dynamic memory leak detector. |
+| **19** | Functions Deep Dive | Chapter 20 | Function pointers, lambdas, recursion. | **EE Special:** Function generator / Signal mapper. |
+| **20** | Object Relations | Chapter 21 | Composition, aggregation, association, container classes. | Network node routing simulation. |
+| **21** | Inheritance | Chapter 22 | Derived classes, construction order, access specifiers. | Device hierarchy (Sensor -> AnalogSensor). |
+| **22** | Virtual Functions & Polymorphism | Chapter 23 | Virtual functions, override, virtual destructors, interfaces. | **EE Special:** Oscilloscope input simulator. |
+| **23** | Templates & Specialization | Chapter 24 | Class templates, specialization, expression parameters. | Matrix type class for linear algebra. |
+| **24** | Exceptions | Chapter 25 | Try/catch/throw, custom exceptions, `noexcept`. | Safe parser for engineering data formats. |
+| **25** | Move Semantics & Smart Pointers | Chapter 26 | `std::unique_ptr`, `std::shared_ptr`, `std::weak_ptr`, move constructors. | Hardware driver resource manager (RAII). |
+| **26** | Input/Output (I/O) & Files | Chapter 27 | File streams (`std::ifstream`, `std::ofstream`), string streams. | Configuration file reader/writer. |
+| **27** | STL Containers & Algorithms | Chapter 28 | Sequential vs associative containers, maps, sets, unordered containers. | Components inventory DB. |
+| **28-30** | Capstone Engineering Projects | Custom | Focus on EE applications (DSP filters, circuit simulators, state machines). | High-fidelity simulations. |
 
 ---
 

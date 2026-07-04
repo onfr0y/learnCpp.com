@@ -18,12 +18,12 @@ message(STATUS "Configuring LearnCpp.com Daily Curriculum Project")
 message(STATUS "C++ Standard: C++${CMAKE_CXX_STANDARD}")
 message(STATUS "--------------------------------------------------------")
 
-# Auto-detect all subdirectories matching day_* that have a CMakeLists.txt
-file(GLOB DAY_DIRS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} day_*)
+# Auto-detect all subdirectories matching unit_* that have a CMakeLists.txt
+file(GLOB UNIT_DIRS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} unit_*)
 
-foreach(dir ${DAY_DIRS})
+foreach(dir ${UNIT_DIRS})
     if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${dir} AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${dir}/CMakeLists.txt)
-        message(STATUS "Adding daily subproject: ${dir}")
+        message(STATUS "Adding unit subproject: ${dir}")
         add_subdirectory(${dir})
     endif()
 endforeach()
