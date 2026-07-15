@@ -38,26 +38,57 @@ namespace operators {}
 //
 //   return 0;
 // }
-
-constexpr std::int64_t powint(std::int64_t base, int exp) {
-
-  assert(exp >= 0 && "powint: exp parameter has negative value");
-
-  if (base == 0)
-    return (exp == 0) ? 1 : 0;
-
-  std::int64_t result{1};
-  while (exp > 0) {
-    if (exp & 1)
-      result *= base;
-
-    exp /= 2;
-    base *= base;
-  }
-  return result;
-}
-
+// note: exp must be non-negative
+// note: does not perform range/overflow checking, use with caution
+// constexpr std::int64_t powint(std::int64_t base, int exp) {
+//   assert(exp >= 0 && "powint: exp parameter has negative value");
+//
+//   // Handle 0 case
+//   if (base == 0)
+//     return (exp == 0) ? 1 : 0;
+//
+//   std::int64_t result{1};
+//   while (exp > 0) {
+//     if (exp & 1) // if exp is odd
+//       result *= base;
+//     exp /= 2;
+//     base *= base;
+//   }
+//
+//   return result;
+// }
+//
+// int main() {
+//   std::cout << powint(7, 12) << '\n'; // 7 to the 12th power
+//
+//   return 0;
+// }
+//
+//
+//
+// 6.4 -- increment/decrement operators, and side effects
+//
+// int main() {
+//
+//   int x{5};
+//   int y{5};
+//   // int y{++x};
+//   // // int z{x++};
+//   // std::cout << x << " " << y << "  " << z << std::endl;
+//   std::cout << x << " " << y << std::endl;
+//   std::cout << ++x << " " << --y << std::endl;
+//   std::cout << x << " " << y << std::endl;
+//   std::cout << x++ << " " << y-- << std::endl;
+//   std::cout << x << " " << y << std::endl;
+// }
+//
+// 6.5 -- The comma operator
+//
 int main() {
-  std::cout << powing(7, 12) << std::endl;
+
+  int x{1};
+  int y{2};
+
+  std::cout << ++x, ++y << '\n';
   return 0;
 }
